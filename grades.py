@@ -10,6 +10,7 @@ def average(scores: list[float]) -> float:
 
 def has_passed(score: float) -> bool:
     """A student passes when the score is at or above PASS_MARK."""
+    # Ensure pass mark is inclusive
     return score >= PASS_MARK
 
 
