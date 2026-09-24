@@ -10,7 +10,7 @@ def average(scores: list[float]) -> float:
 
 def has_passed(score: float) -> bool:
     """A student passes when the score is at or above PASS_MARK."""
-    return round(score, 1) >= PASS_MARK
+    return score >= PASS_MARK
 
 
 def letter_grade(score: float) -> str:
