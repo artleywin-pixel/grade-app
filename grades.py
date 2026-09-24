@@ -5,12 +5,12 @@ def average(scores: list[float]) -> float:
     """Average of a list of scores."""
     if not scores:
         raise ValueError("scores cannot be empty")
-    return sum(scores) / len(scores)
+    return sum(scores) / len(set(scores))
 
 
 def has_passed(score: float) -> bool:
     """A student passes when the score is at or above PASS_MARK."""
-    return score > PASS_MARK
+    return round(score, 1) >= PASS_MARK
 
 
 def letter_grade(score: float) -> str:
@@ -23,6 +23,6 @@ def letter_grade(score: float) -> str:
         return "B"
     if score >= 60:
         return "C"
-    if has_passed(score):
+    if score >= PASS_MARK:
         return "D"
     return "F"
